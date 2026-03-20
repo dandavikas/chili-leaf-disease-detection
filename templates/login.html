@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login - Chili Leaf Disease Detection</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+    <style>
+        .login-card {
+            width: 480px;
+            border-radius: 25px;
+        }
+
+        .login-title {
+            font-size: 32px;
+            font-weight: 600;
+            color: #1f7a4c;
+        }
+
+        .form-control {
+            height: 50px;
+            border-radius: 12px;
+        }
+
+        .btn-success {
+            height: 55px;
+            border-radius: 15px;
+            font-size: 20px;
+            font-weight: 500;
+        }
+
+        .signup-btn {
+            border-radius: 12px;
+            height: 50px;
+        }
+
+        .input-group-text {
+            border-radius: 0 12px 12px 0;
+            cursor: pointer;
+            background-color: #ffffff;
+        }
+    </style>
+</head>
+
+<body style="
+    background: url('{{ url_for('static', filename='background4.jpg') }}') no-repeat center center fixed;
+    background-size: cover;
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+">
+
+<!-- Overlay -->
+<div style="background-color: rgba(0,0,0,0.5); padding: 20px; border-radius: 15px;">
+
+<div class="card shadow-lg p-5 login-card">
+
+    <h2 class="text-center login-title mb-4">
+        🌿 Chili Leaf <br> Disease Detection
+    </h2>
+
+    <form method="POST">
+
+        <div class="mb-4">
+            <label class="form-label">Username</label>
+            <input type="text" name="username" class="form-control"
+                   placeholder="Enter username" required>
+        </div>
+
+        <div class="mb-4">
+            <label class="form-label">Password</label>
+
+            <div class="input-group">
+                <input type="password"
+                       name="password"
+                       id="password"
+                       class="form-control"
+                       placeholder="Enter password"
+                       required>
+
+                <span class="input-group-text" onclick="togglePassword()">
+                    <i class="bi bi-eye" id="eyeIcon"></i>
+                </span>
+            </div>
+        </div>
+
+        <!-- ERROR MESSAGE -->
+        {% if error %}
+        <div class="alert alert-danger text-center">
+            {{ error }}
+        </div>
+        {% endif %}
+
+        <div class="d-grid mb-3">
+            <button type="submit" class="btn btn-success">
+                Sign In
+            </button>
+        </div>
+
+        <div class="text-center mb-3">
+            <a href="/forgot" class="text-decoration-none text-success fw-semibold">
+                Forgot Password?
+            </a>
+        </div>
+
+        <hr>
+
+        <div class="text-center">
+            <p class="mb-2">Don't have an account?</p>
+            <a href="/signup" class="btn btn-outline-success w-100 signup-btn">
+                Sign Up
+            </a>
+        </div>
+
+    </form>
+
+</div>
+</div>
+
+<script>
+function togglePassword() {
+    var passwordField = document.getElementById("password");
+    var eyeIcon = document.getElementById("eyeIcon");
+
+    if (passwordField.type === "password") {
+        passwordField.type = "text";
+        eyeIcon.classList.remove("bi-eye");
+        eyeIcon.classList.add("bi-eye-slash");
+    } else {
+        passwordField.type = "password";
+        eyeIcon.classList.remove("bi-eye-slash");
+        eyeIcon.classList.add("bi-eye");
+    }
+}
+</script>
+
+</body>
+</html>
