@@ -33,15 +33,25 @@ CNN-based web application for chili leaf disease detection built using Flask and
 ## 📂 Project Structure
 
 ├── app.py
+
 ├── templates/
+
 │ ├── login.html
+
 │ ├── signup.html
+
 │ ├── dashboard.html
+
 │ └── forgot.html
+
 ├── static/
+
 │ ├── uploads/
+
 │ └── background images
+
 ├── chili_leaf_model.h5
+
 ├── README.md
 
 ---
@@ -50,7 +60,7 @@ CNN-based web application for chili leaf disease detection built using Flask and
 
 ### 1. Clone the repository
 
-git clone https://github.com/yourusername/chili-leaf-disease-detection.git
+https://github.com/dandavikas/chili-leaf-disease-detection.git
 
 cd chili-leaf-disease-detection
 
