@@ -1,0 +1,7 @@
+Flask
+flask_sqlalchemy
+tensorflow
+numpy
+Pillow
+gunicorn
+werkzeug
